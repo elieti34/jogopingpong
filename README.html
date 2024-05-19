@@ -1,0 +1,134 @@
+Biscoitos
+O editor p5.js usa cookies. Alguns são essenciais para a funcionalidade do site e permitem gerenciar uma conta e preferências. Outros não são essenciais: são usados ​​para análise e nos permitem aprender mais sobre nossa comunidade. Nunca vendemos esses dados nem os usamos para publicidade. Você pode decidir quais cookies deseja permitir e saber mais em nossa Política de Privacidade .
+
+
+Permitir todos
+
+Permitir essencial
+Aprenda a fazer arte com IA com o Social Software High School Summer Institute. Inscreva-se até 1º de junho!
+Arquivo
+Editar
+Esboço
+Ajuda
+Inglês
+Olá , Elieti90 !
+
+
+
+Atualização automática
+
+jogo ping
+por Elieti90
+
+
+
+esboço.js
+Salvo: 1 minuto atrás
+1
+//variáveis ​​da bolinha
+2
+seja  xBolinha  =  300 ;
+3
+seja  yBolinha  =  200 ;
+4
+seja  diâmetro  =  15 ;
+5
+deixe  raio  =  diametro  /  2 ;
+6
+​
+7
+//velocidade da bolinha
+8
+deixe  velocidadeXBolinha  =  6 ;
+9
+deixe  velocidadeYBolinha  =  6 ;
+10
+deixe  raqueteComprimento  =  10 ;
+11
+deixe  raqueteAltura  =  90 ;
+12
+​
+13
+//variáveis ​​da raquete
+14
+seja  xRaquete  =  5 ;
+15
+seja  yRaquete  =  150 ;
+16
+​
+17
+//variáveis ​​do adversário
+18
+deixe  xRaqueteOponente  =  585 ;
+19
+deixe  yRaqueteOponente  =  150 ;
+20
+deixe  velocidadeYOponente ;
+21
+​
+22
+deixe  colidiu  =  falso ;
+23
+​
+24
+//placar
+25
+deixe  meusPontos  =  0 ;
+26
+deixe  pontosOponente  =  0 ;
+27
+​
+28
+//filhos do jogo
+29
+deixe  raquetada ;
+30
+deixe  ponto ;
+31
+deixe  trilha ;
+32
+​
+33
+// Chance de errar
+34
+deixe  chanceDeErrar  =  0 ;
+35
+​
+36
+função  pré-carregamento (){
+37
+  trilha  =  loadSound ( "trilha.mp3" )
+38
+  ponto  =  loadSound ( "ponto.mp3" )
+39
+  raquetada  =  loadSound ( "raquetada.mp3" )
+40
+}
+41
+​
+42
+ configuração de função () {
+43
+  criarCanvas ( 600 , 400 );
+44
+  trilha . laço ();
+45
+}
+46
+​
+47
+função  desenhar () {
+48
+  fundo ( 0 );
+49
+  mostraBolinha ();
+50
+  movimentosBolinha ();
+51
+  verificaColisaoBorda ();
+52
+  mostraRaquete ( xRaquete , yRaquete );
+53
+  movimentosMinhaRaquete ();
+54
+  //verificaColisaoRaquete();
